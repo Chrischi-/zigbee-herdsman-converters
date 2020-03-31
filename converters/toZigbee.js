@@ -33,6 +33,9 @@ const options = {
         manufacturerCode: 0x1021,
         disableDefaultResponse: true,
     },
+    bitron: {
+        manufacturerCode: 0x1071,
+    },
 };
 
 function getTransition(entity, key, meta) {
