@@ -919,6 +919,14 @@ const converters = {
     /**
      * Device specific
      */
+    bitron_thermostat_gateway_link_timer: {
+        key: ['thermostat_gateway_link_timer'],
+        convertSet: async (entity, key, value, meta) => {
+            if (value > 0) {
+            await entity.write('hvacThermostat', {0x0201: {value, type: 0x21}}, options.bitron);
+            }
+        },
+    },
     LLKZMK11LM_interlock: {
         key: ['interlock'],
         convertSet: async (entity, key, value, meta) => {
